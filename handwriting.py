@@ -29,6 +29,17 @@ model = tf.keras.models.Sequential([
     #4. Add a hidden layer with dropout, 
 
     #5. Add an output layer with output units for all 10 digits, activation function is softmax
+
+    tf.keras.layers.Conv2D(
+        32, (3, 3), activation="relu", input_shape=(28, 28, 1)
+    ), 
+    tf.keras.layers.MaxPooling2D(pool_size=(2, 2)),
+    tf.keras.layers.Flatten(),
+
+    tf.keras.layers.Dense(128, activation="relu"),
+    tf.keras.layers.Dropout(0.5),
+
+    tf.keras.layers.Dense(10, activation="softmax")
     
 ])
 
